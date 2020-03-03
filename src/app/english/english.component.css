@@ -1,0 +1,13 @@
+.bgLeft {
+  background-color: beige;
+}
+
+.bgRight {
+  background-color: antiquewhite;
+}
+
+.borderC {
+  border-bottom-color: black;
+  border-width: 1px;
+  border-style: solid;
+}

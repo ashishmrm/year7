@@ -1,0 +1,11 @@
+<div class="ccol-sm-4" *ngFor="let word of displayList; let i = index">
+  <div *ngIf="i % 6 == 0" class="row">
+    <button mat-raised-button class="col-sm-2" (click)="wordSelected(word)">{{ word }}</button>
+    <button mat-raised-button class="col-sm-2" *ngIf="i + 1 < displayList.length" (click)="wordSelected(displayList[i + 1])">{{ displayList[i + 1] }}</button>
+    <button mat-raised-button class="col-sm-2" *ngIf="i + 2 < displayList.length" (click)="wordSelected(displayList[i + 2])">{{ displayList[i + 2] }}</button>
+    <button mat-raised-button class="col-sm-2" *ngIf="i + 3 < displayList.length" (click)="wordSelected(displayList[i + 3])">{{ displayList[i + 3] }}</button>
+    <button mat-raised-button class="col-sm-2" *ngIf="i + 4 < displayList.length" (click)="wordSelected(displayList[i + 4])">{{ displayList[i + 4] }}</button>
+    <button mat-raised-button class="col-sm-2" *ngIf="i + 5 < displayList.length" (click)="wordSelected(displayList[i + 5])">{{ displayList[i + 5] }}</button>
+  </div>
+</div>
+

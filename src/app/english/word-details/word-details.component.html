@@ -1,0 +1,53 @@
+<div *ngIf="wordDetails">
+  <div *ngIf="wordDetails.results">
+    <div class="borderC" *ngFor="let result of wordDetails.results">
+      <div class="row indent5">
+        <div class="col-sm-2">Definition :</div>
+        <div class="col-sm-10 detail">{{ result.definition}}</div>
+      </div>
+      <div class="row indent5">
+        <div class="col-sm-2">Part of Speech :</div>
+        <div class="col-sm-10 detail">{{ result.partOfSpeech}}</div>
+      </div>
+      <div class="row indent5">
+        <div class="col-sm-2">Synonyms :</div>
+        <div class="col-sm-10 detail">
+          <div class="row">
+            <button mat-flat-button class="col-sm-2 detailS" *ngFor="let synonym of result.synonyms"
+                    (click)="lookupWord(synonym)">{{synonym}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="row indent5">
+        <div class="col-sm-2">Examples :</div>
+        <div class="col-sm-10 detail">{{ result.examples}}</div>
+      </div>
+      <div class="row indent5">
+        <div class="col-sm-2">Antonyms :</div>
+        <div class="col-sm-10 detail">{{ result.antonyms}}</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="wordDetails.synonyms">
+    <div class="row indent5" *ngFor="let synonym of wordDetails.synonyms">
+      <button mat-flat-button class="detailS" (click)="lookupWord(synonym)" >{{ synonym }}</button>
+    </div>
+  </div>
+  <div *ngIf="wordDetails.antonyms">
+    <div *ngFor="let antonym of wordDetails.antonyms">
+      <div class="row indent5 detail">{{ antonym }}</div>
+    </div>
+  </div>
+  <div *ngIf="wordDetails.definitions">
+    <div class="borderC" *ngFor="let definition of wordDetails.definitions">
+      <div class="row indent5">
+        <div class="col-sm-2">Definition :</div>
+        <div class="col-sm-10 detail">{{ definition.definition}}</div>
+      </div>
+      <div class="row indent5">
+        <div class="col-sm-2">Definition :</div>
+        <div class="col-sm-10 detail">{{ definition.partOfSpeech}}</div>
+      </div>
+    </div>
+  </div>
+</div>

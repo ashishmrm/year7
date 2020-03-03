@@ -1,0 +1,24 @@
+.borderC {
+  border-bottom-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.indent5 {
+  margin-left: 5px;
+}
+
+.mat-flat-button {
+  text-align: left;
+}
+
+.detail {
+  font-family: cursive;
+  color: blue;
+}
+
+.detailS {
+  font-family: cursive;
+  color: purple;
+  font-size: medium;
+}

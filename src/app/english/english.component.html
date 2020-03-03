@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-sm-3 bgLeft">
+    <!--
+      <div *ngFor="let alphabet of getAlphabets()">
+        "{{ alphabet }}"
+      </div>
+    -->
+    <mat-list>
+      <button mat-list-item *ngFor="let alphabet of getAlphabets()" (click)="showWords(alphabet)">
+        {{ alphabet }}
+      </button>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div>
+  <div class="col-sm-9 bgRight">
+    <mat-card>
+      <app-alphabet [selectedAlphabetSet]="selectedAlphabet" (lookupWord)="lookupWord($event)"></app-alphabet>
+    </mat-card>
+    <mat-card>
+      <div class="col-sm-12">
+        <form [formGroup]="wordForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group form-group-sm">
+              <div class="row">
+                <div class="col-sm-2">Word:</div>
+                <div class="col-sm-2 offset-5">
+                  <input type="text" formControlName="word"/>
+                </div>
+              </div>
+              <div class="row">
+                <button class="btn btn-download" type="submit" data-toggle="tooltip" data-placement="bottom">
+                  <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+                <button class="btn btn-download" (click)="synonyms()" data-toggle="tooltip" data-placement="bottom">
+                  <span class="glyphicon glyphicon-search"></span> Synonyms
+                </button>
+                <button class="btn btn-download" (click)="antonyms()" data-toggle="tooltip" data-placement="bottom">
+                  <span class="glyphicon glyphicon-search"></span> Antonyms
+                </button>
+                <button class="btn btn-download" (click)="definitions()" data-toggle="tooltip" data-placement="bottom">
+                  <span class="glyphicon glyphicon-search"></span> Definitions
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <app-word-details [wordDetails]="wordDetails" (wordSelected)="lookupWord($event)"></app-word-details>
+
+      </div>
+    </mat-card>
+
+  </div>
+</div>
